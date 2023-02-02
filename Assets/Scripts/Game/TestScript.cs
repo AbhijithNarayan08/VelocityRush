@@ -24,9 +24,10 @@ public class TestScript : MonoBehaviour
         debugInstanceDummy.Log("testing", this.GetType());
     }
 
-    [Inject(typeof(SuperDebug))]
+    [Inject]
     public void ConstructorDummy(SuperDebug _debug)
     {
         debugInstanceDummy = _debug;
+        
     }
 }

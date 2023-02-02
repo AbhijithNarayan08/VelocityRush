@@ -10,6 +10,16 @@ namespace DependencyHero
         {
             DependencyType = dependencyType;
         }
+
+        public Inject()
+        {
+            
+        }
+
+        ~Inject()
+        {
+            
+        }
     }
 }
 

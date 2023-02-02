@@ -6,10 +6,7 @@ public class ProjectContext : MonoBehaviour
 {
     private void Awake()
     {
-        
-        
         register();
-       
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -17,9 +14,7 @@ public class ProjectContext : MonoBehaviour
     // Register all project instances here
     internal void register()
     {
-        DependencyInjector.Instance.Register(new SuperDebug());
+        DependencyInjector.Instance.Register(typeof(SuperDebug));
     }
-
-   
 }
 

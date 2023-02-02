@@ -1,4 +1,6 @@
 
+using System.Linq.Expressions;
+using System;
 namespace DependencyHero
 {
     using System;
@@ -6,7 +8,7 @@ namespace DependencyHero
     using System.Linq;
     using System.Reflection;
 
-    public class DependencyInjector
+    public class DependencyInjector 
     {
         private static DependencyInjector _instance;
         public static DependencyInjector Instance
@@ -20,12 +22,19 @@ namespace DependencyHero
         }
         private DependencyInjector() { }
 
+        ~ DependencyInjector() { }
+
         private Dictionary<Type, object> dependencies = new Dictionary<Type, object>();
 
-        public void Register(object dependency)
+        public void Register(Type _t)
         {
-            dependencies[dependency.GetType()] = dependency;
+            
+            object dependency = null;
+            dependency = Activator.CreateInstance(_t);
+            dependencies[_t] = dependency;
         }
+
+
 
         public T Get<T>()
         {
