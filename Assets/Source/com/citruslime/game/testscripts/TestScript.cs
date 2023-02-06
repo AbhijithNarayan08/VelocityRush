@@ -1,3 +1,5 @@
+using com.citruslime.game.audio.audioclip;
+using com.citruslime.lib.audio;
 using com.citruslime.lib.dependencyHero;
 using com.citruslime.lib.ui.manager;
 using com.citruslime.lib.ui.vo.dialog;
@@ -9,6 +11,8 @@ public class TestScript : MonoBehaviour
 
     private  UiManager uim;
     private Idebug debugInstanceDummy = null;
+
+    private AudioManager audioManager = null;
 
 
     void Start()
@@ -34,13 +38,16 @@ public class TestScript : MonoBehaviour
             }
         );
         debugInstanceDummy.Log("testing", this.GetType());
+
+        audioManager.PlayAudio(new AudioPlaySignal(AudioClipEnum.SFX_None_TestClip, false, true));
     }
 
     [Inject]
-    public void ConstructorDummy(SuperDebug _debug, UiManager _uim)
+    public void ConstructorDummy(SuperDebug _debug, UiManager _uim, AudioManager _aum)
     {
         debugInstanceDummy = _debug;
         uim = _uim;
+        audioManager = _aum;
         
     }
 }

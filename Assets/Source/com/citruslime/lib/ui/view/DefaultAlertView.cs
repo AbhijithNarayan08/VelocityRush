@@ -87,7 +87,7 @@ namespace com.citruslime.lib.ui.view
                     alertText.text = alertViewVo.Text.ToUpper();
                 }
 
-                coroutineService.StartCoroutine ( autoHideAlertCoroutine() );
+                //coroutineService.StartCoroutine ( autoHideAlertCoroutine() );
             }
             else 
             {
