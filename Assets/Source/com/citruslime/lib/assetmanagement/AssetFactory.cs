@@ -14,5 +14,10 @@ namespace com.citruslime.lib.assetmanagement
             GameObject prefab = Resources.Load<GameObject>(_path);
             return GameObject.Instantiate(prefab);
         }
+
+        public AudioClip LoadResourceAsAduioClip(string _path)
+        {
+            return Resources.Load<AudioClip>(_path);
+        }
     }
 }
