@@ -3,6 +3,7 @@ using com.citruslime.lib.dependencyHero;
 using com.citruslime.lib.ui.manager;
 using com.citruslime.lib.assetmanagement;
 using com.citruslime.lib.coroutine;
+using com.citruslime.lib.vfxsystem;
 
 namespace com.citruslime.game.context
 {
@@ -24,6 +25,7 @@ namespace com.citruslime.game.context
             DependencyInjector.Instance.Register(typeof(AssetFactory));
             DependencyInjector.Instance.Register(typeof(UiManager));
             DependencyInjector.Instance.Register(typeof(AudioManager));
+            DependencyInjector.Instance.Register(typeof(ParticleSpawnerService));
         }
     }
     

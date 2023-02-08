@@ -672,7 +672,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: ' VFX button'
 --- !u!222 &1116390362
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 1545590532}
   - component: {fileID: 1545590531}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: vfx_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -829,19 +829,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1545590532}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 247690765}
-        m_TargetAssemblyTypeName: TestScript2, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1545590532
 MonoBehaviour:
   m_ObjectHideFlags: 0
