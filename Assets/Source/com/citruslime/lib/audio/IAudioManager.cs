@@ -48,6 +48,9 @@ namespace com.citruslime.lib.audio
         /// </summary>
         /// <param name="audioClip">clip to stop playing</param>
         void Stop (AudioClipEnum audioClip);
+
+
+        void PlayAudio (AudioPlaySignal signal);
         
         /// <summary>
         /// Function to Cross Fade sounds. It can also be used just to 

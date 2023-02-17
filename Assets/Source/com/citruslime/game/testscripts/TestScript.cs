@@ -14,7 +14,7 @@ public class TestScript : MonoBehaviour
     private  UiManager uim;
     private Idebug debugInstanceDummy = null;
 
-    private AudioManager audioManager = null;
+    private IAudioManager audioManager = null;
 
     private ParticleSpawnerService particleSpawner = null;
 
@@ -41,7 +41,7 @@ public class TestScript : MonoBehaviour
         //         viewGo.GetComponent<TestDialogView>();
         //     }
         // );
-        // debugInstanceDummy.Log("testing", this.GetType());
+         debugInstanceDummy.Log("testing", this.GetType());
 
         audioManager.PlayAudio(new AudioPlaySignal(AudioClipEnum.SFX_None_TestClip, false, true));
         particleSpawner.SpawnParticleAtPositionInParent(VfxNameEnums.TestParticleVfx , 1 ,new Vector3(0,0,0) ,this.gameObject.transform);
@@ -49,9 +49,9 @@ public class TestScript : MonoBehaviour
 
     [Inject]
     public void ConstructorDummy(   
-                                    SuperDebug _debug, 
+                                    Idebug _debug, 
                                     UiManager _uim,
-                                    AudioManager _aum,
+                                    IAudioManager _aum,
                                     ParticleSpawnerService _pss)
     {
         debugInstanceDummy = _debug;

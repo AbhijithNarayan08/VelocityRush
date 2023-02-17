@@ -16,7 +16,7 @@ using com.citruslime.lib.audio.util;
 /// <summary>
 /// todo change this into a service , not a manager the way that we are using it right now 
 /// </summary>
-public class AudioManager : AbstractAudioManager 
+public class AudioManager : IAudioManager 
 {
 
     //flag to indicate if music is already muted can it be a bitflag ? maybe
@@ -469,6 +469,11 @@ public class AudioManager : AbstractAudioManager
         AudioClipModel audio = currentPlayingClips[currentPlayingClips.Count - 1];
 
         audio.AudioSource.volume = targetVolume;
+    }
+
+    public void Crossfade(AudioClipEnum fadeInClip, AudioClipEnum fadeOutClip, float crossFadeDuration, float loopDurationInSecondsFadeIn = -1, int loopCountFadeIn = 1)
+    {
+        throw new NotImplementedException();
     }
 
     // private IEnumerator FadeOutCoroutine (string fadeOutClip, float crossFadeDuration)

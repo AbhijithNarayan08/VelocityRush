@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa975e082f04ad4da4c5e39bc625256, type: 3}
   m_Name: ParticleRefSo
   m_EditorClassIdentifier: 
-  particleReferences: []
-  vfxNameEnums: 
+  particleReferences:
+  - m_AssetGUID: c717990f93da3e84197a7c82367f8574
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  vfxNameEnums: 00000000

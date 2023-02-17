@@ -45,31 +45,47 @@ namespace com.citruslime.lib.dependencyHero
         {
             var type = target.GetType();
             var methods = type.GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-            
+
             foreach (MethodInfo method in methods)
             {
                 object[] injectAttributes = method.GetCustomAttributes(typeof(Inject), true);
                 if (injectAttributes.Length == 0)
                     continue;
-                
+
                 ParameterInfo[] parameters = method.GetParameters();
                 object[] parameterValues = new object[parameters.Length];
                 for (var i = 0; i < parameters.Length; i++)
                 {
                     var parameter = parameters[i];
                     var parameterType = parameter.ParameterType;
-                    if (dependencies.ContainsKey(parameterType))
+                    if (parameterType.IsInterface)
                     {
-                        parameterValues[i] = dependencies[parameterType];
+                        Type implementationType = dependencies.Keys.FirstOrDefault(k => parameterType.IsAssignableFrom(k));
+                        if (implementationType != null)
+                        {
+                            parameterValues[i] = dependencies[implementationType];
+                        }
+                        else
+                        {
+                            throw new Exception($"Dependency implementing {parameterType} not found.");
+                        }
                     }
                     else
                     {
-                        throw new Exception($"Dependency of type {parameterType} not found.");
+                        if (dependencies.ContainsKey(parameterType))
+                        {
+                            parameterValues[i] = dependencies[parameterType];
+                        }
+                        else
+                        {
+                            throw new Exception($"Dependency of type {parameterType} not found.");
+                        }
                     }
                 }
                 method.Invoke(target, parameterValues);
             }
         }
+
     }
 
 }

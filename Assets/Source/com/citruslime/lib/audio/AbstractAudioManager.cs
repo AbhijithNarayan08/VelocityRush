@@ -42,6 +42,11 @@ namespace com.citruslime.lib.audio
             
         }
 
+        public void PlayAudio(AudioPlaySignal signal)
+        {
+            
+        }
+
         public void PlaySingleInstance(AudioClipEnum audioClip, bool loop = true)
         {
             
